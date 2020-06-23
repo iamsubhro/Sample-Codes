@@ -121,7 +121,7 @@ public class CycleDetection {
             SinglyLinkedListNode SecondPointer = head;
 
             //iterating unless null pointer
-            while(firstPointer!=null && firstPointer.next != null && SecondPointer != null){
+            while(firstPointer!=null && firstPointer.next != null ){
 
                 //increment first pointer unless it points to null
                 if(firstPointer!=null && firstPointer.next != null){
@@ -129,9 +129,7 @@ public class CycleDetection {
                 }
 
                 //increment second pointer unless it points to null
-                if(SecondPointer != null){
-                    SecondPointer = SecondPointer.next;
-                }
+                SecondPointer = SecondPointer.next; 
 
                 //Cycle if both pointers pointing to same node
                 if(firstPointer == SecondPointer){
