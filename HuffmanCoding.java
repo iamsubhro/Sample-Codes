@@ -1,5 +1,7 @@
+package datastructures;
+
 import java.util.*;
- 
+
 abstract class Node implements Comparable<Node> {
     public  int frequency; // the frequency of this tree
     public  char data;
@@ -45,41 +47,21 @@ class Decoding {
 */ 
 
 	void decode(String s, Node root) {
-        int i = 0;
-        Node currentPointer;
         
-        //iterating for each  character in string
-        while(i<s.length()){
-            
-            // Iniliazing current pointer as root
-            currentPointer=root;
+        Node node = root;
+        for (int i = 0; i < s.length(); i++) {
 
-            //Iterates unless current pointer becomes leaf node
-            while(currentPointer.left!=null || currentPointer.right!=null){
-                
-                //current pointer moves right if '1' found in string
-                if(s.charAt(i)=='1'){
-                    currentPointer=currentPointer.right;
-                }
-                
-                //current pointer moves left if '0' found in string
-                else{
-                    currentPointer=currentPointer.left;
-                }
-                i+=1;
-            }
-
-            //printing current pointer character value
-            System.out.print(currentPointer.data);
-        }
+            node = s.charAt(i) == '0' ? node.left : node.right;
+            if (node.left == null && node.right == null) {
+                System.out.print(node.data);
+                node = root;
+        } 
+    }  
     }
-
-
-
 }
 
  
-public class HuffmanCoding {
+public class Huffmandecoding {
   
     // input is an array of frequencies, indexed by character code
     public static Node buildTree(int[] charFreqs) {
