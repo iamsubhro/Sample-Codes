@@ -1,11 +1,7 @@
-package datastructures;
-
-import java.io.*;
 import java.util.*;
 public class Queueusingtwostacks {
 
 	    public static void main(String[] args) {
-	        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
 
 	        Scanner sc= new Scanner(System.in);
 	        Stack<Integer> front= new Stack<>();
@@ -33,12 +29,14 @@ public class Queueusingtwostacks {
 	                }
 
 	                if(!front.isEmpty()){
+				
+			    if(t == 3)
+	                    System.out.println(front.peek());
 
 	                    if(t == 2)
 	                    front.pop();
 
-	                    if(t == 3)
-	                    System.out.println(front.peek());
+	                    
 	                }
 	            }
 	        }
